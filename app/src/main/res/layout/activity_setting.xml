@@ -7,6 +7,8 @@
     android:background="@color/colorPrimaryTrans"
     tools:context=".ui.activity.Setting">
 
+
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/settings_image"
         android:layout_width="170dp"
@@ -15,6 +17,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:src="@drawable/logo" />
+
+
     <TextView
         android:id="@+id/settings_name"
         android:layout_width="wrap_content"
@@ -25,6 +29,8 @@
         android:text="Display Name"
         android:textColor="@android:color/white"
         android:textSize="24sp" />
+
+
 
     <Button
         android:id="@+id/settings_status_btn"
@@ -39,6 +45,8 @@
         android:text="CHANGE STATUS"
         android:textColor="@color/colorPrimary" />
 
+
+
     <Button
         android:id="@+id/settings_image_btn"
         android:layout_width="wrap_content"
@@ -52,6 +60,8 @@
         android:text="CHANGE IMAGE"
         android:textColor="@color/colorPrimary" />
 
+
+
     <TextView
         android:id="@+id/settings_status"
         android:layout_width="wrap_content"
@@ -61,5 +71,6 @@
         android:layout_marginTop="15dp"
         android:text="@string/default_status"
         android:textColor="@android:color/white" />
+
 
 </RelativeLayout>

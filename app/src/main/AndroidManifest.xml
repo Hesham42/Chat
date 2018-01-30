@@ -23,13 +23,16 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.activity.ChatActivity" />
-        <activity android:name=".ui.activity.Setting" />
-        <activity android:name=".ui.activity.State"/>
+        <activity
+            android:name=".ui.activity.Setting"/>
+        <activity android:name=".ui.activity.State" />
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
-
-
+        <activity
+            android:name=".ui.activity.UserActivity"
+            android:parentActivityName=".ui.activity.ChatActivity" />
+        <activity android:name=".ui.activity.Profile"></activity>
     </application>
 
 </manifest>

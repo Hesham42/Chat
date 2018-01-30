@@ -131,13 +131,13 @@ public class  ChatActivity extends AppCompatActivity {
             startActivity(settingsIntent);
 
         }
-//
-//        if(item.getItemId() == R.id.main_all_btn){
-//
-//            Intent settingsIntent = new Intent(MainActivity.this, UsersActivity.class);
-//            startActivity(settingsIntent);
-//
-//        }
+        if(item.getItemId() == R.id.main_all_btn){
+
+            Intent settingsIntent = new Intent(ChatActivity.this,
+                    UserActivity.class);
+            startActivity(settingsIntent);
+
+        }
 
         return true;
     }

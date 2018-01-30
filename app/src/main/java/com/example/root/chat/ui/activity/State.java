@@ -1,6 +1,7 @@
 package com.example.root.chat.ui.activity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -75,6 +76,9 @@ public class State extends AppCompatActivity {
                         if(task.isSuccessful()){
 
                             mProgress.dismiss();
+                            Intent intent= new Intent(State.this,ChatActivity.class);
+                            startActivity(intent);
+                            finish();
 
                         } else {
 
