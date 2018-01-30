@@ -52,40 +52,27 @@ public class UserActivity extends AppCompatActivity {
                 R.layout.users_single_layout,
                 UsersViewHolder.class,
                 mUsersDatabase
-
         )
         {
             @Override
             protected void populateViewHolder(UsersViewHolder usersViewHolder, Users users, int position)
             {
-
                 usersViewHolder.setDisplayName(users.getName());
                 usersViewHolder.setUserStatus(users.getStatus());
                 usersViewHolder.setUserImage(users.getThumb_image(), getApplicationContext());
-
                 final String user_id = getRef(position).getKey();
-
                 usersViewHolder.mView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
                         Intent profileIntent = new Intent(UserActivity.this, Profile.class);
                         profileIntent.putExtra("user_id", user_id);
                         startActivity(profileIntent);
-
                     }
                 });
-
             }
         };
-
-
         mUsersList.setAdapter(firebaseRecyclerAdapter);
-
     }
-
-
-
 }
 
 
