@@ -31,5 +31,7 @@
     <string name="error_password_match">Password Does Not Matches</string>
     <string name="logout">Logout</string>
     <string name="error_valid_email_password">error in validation</string>
+    <string name="log_out">Logut</string>
+    <string name="default_status">Guinness</string>
 
 </resources>

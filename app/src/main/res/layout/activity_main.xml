@@ -5,7 +5,7 @@
     android:id="@+id/action_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignInAndSignUp">
+    tools:context=".ui.activity.SignInAndSignUp">
 
 
     <ImageView
@@ -29,7 +29,7 @@
             android:orientation="horizontal"
             app:layout_widthPercent="85%">
 
-            <com.example.root.chat.VerticalTextView
+            <com.example.root.chat.util.VerticalTextView
 
                 android:id="@+id/tvSigninInvoker"
                 android:layout_width="match_parent"
@@ -60,7 +60,7 @@
             android:orientation="horizontal"
             app:layout_widthPercent="15%">
 
-            <com.example.root.chat.VerticalTextView
+            <com.example.root.chat.util.VerticalTextView
                 android:id="@+id/tvSignupInvoker"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

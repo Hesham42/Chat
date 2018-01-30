@@ -1,10 +1,8 @@
-package com.example.root.chat;
+package com.example.root.chat.ui.activity;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.percent.PercentLayoutHelper;
@@ -21,6 +19,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.root.chat.R;
+import com.example.root.chat.util.InputValidation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -70,8 +70,6 @@ public class SignInAndSignUp extends AppCompatActivity {
     //---------------------------------------------------
 
     private AppCompatTextView textViewLinkRegister;
-    private DatabaseHelper databaseHelper;
-    private UserDATABASE userDATABASE;
     private ProgressDialog mRegProgress;
 
 
@@ -84,8 +82,6 @@ public class SignInAndSignUp extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mRegProgress = new ProgressDialog(this);
 
-        databaseHelper = new DatabaseHelper(this);
-        userDATABASE = new UserDATABASE();
         initViews();
         initListeners();
 
@@ -301,7 +297,7 @@ public class SignInAndSignUp extends AppCompatActivity {
 
                     HashMap<String, String> userMap = new HashMap<>();
                     userMap.put("name", display_name);
-                    userMap.put("status", "Hi there I'm using Lapit Chat App.");
+                    userMap.put("status", "Hi there I'm using Lycans Chat App.");
                     userMap.put("image", "default");
                     userMap.put("thumb_image", "default");
                     userMap.put("device_token", device_token);
@@ -340,7 +336,8 @@ public class SignInAndSignUp extends AppCompatActivity {
     private void loginUser(String email, String password) {
 
 
-        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {

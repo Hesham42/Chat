@@ -1,4 +1,4 @@
-package com.example.root.chat;
+package com.example.root.chat.util;
 
 import android.content.Context;
 import android.graphics.Canvas;
