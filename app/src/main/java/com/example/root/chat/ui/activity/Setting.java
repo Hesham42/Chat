@@ -64,7 +64,11 @@ public class Setting extends AppCompatActivity {
         mImageStorage = FirebaseStorage.getInstance().getReference();
         mCurrentUser = FirebaseAuth.getInstance().getCurrentUser();
         String current_uid = mCurrentUser.getUid();
-        mUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(current_uid);
+        mUserDatabase = FirebaseDatabase.
+                getInstance()
+                .getReference()
+                .child("Users")
+                .child(current_uid);
         mUserDatabase.keepSynced(true);
         mUserDatabase.addValueEventListener(new ValueEventListener() {
             @Override

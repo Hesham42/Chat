@@ -38,8 +38,6 @@ public class SignInAndSignUp extends AppCompatActivity {
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
     private DatabaseReference mUserDatabase;
-
-
 //------------------------------------------------
 
     private TextView tvSignupInvoker;
@@ -81,6 +79,8 @@ public class SignInAndSignUp extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mAuth = FirebaseAuth.getInstance();
         mRegProgress = new ProgressDialog(this);
+        mUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
+
 
         initViews();
         initListeners();
@@ -301,15 +301,11 @@ public class SignInAndSignUp extends AppCompatActivity {
                     userMap.put("image", "default");
                     userMap.put("thumb_image", "default");
                     userMap.put("device_token", device_token);
-
                     mDatabase.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
-
                             if (task.isSuccessful()) {
-
                                 mRegProgress.dismiss();
-
                                 Intent mainIntent = new Intent(SignInAndSignUp.this, ChatActivity.class);
                                 mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 startActivity(mainIntent);
@@ -319,8 +315,6 @@ public class SignInAndSignUp extends AppCompatActivity {
 
                         }
                     });
-
-
                 } else {
 
                     mRegProgress.hide();
@@ -355,10 +349,8 @@ public class SignInAndSignUp extends AppCompatActivity {
                             mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(mainIntent);
                             finish();
-
                         }
                     });
-
 
                 } else {
 

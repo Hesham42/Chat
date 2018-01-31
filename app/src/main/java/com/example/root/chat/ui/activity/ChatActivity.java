@@ -35,7 +35,7 @@ public class  ChatActivity extends AppCompatActivity {
 
         mToolbar = (Toolbar) findViewById(R.id.main_page_toolbar);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle("Lapit Chat");
+        getSupportActionBar().setTitle("Lycans Chat");
 
         if (mAuth.getCurrentUser() != null) {
 
